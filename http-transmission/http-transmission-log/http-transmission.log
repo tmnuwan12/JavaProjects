@@ -1,0 +1,2 @@
+11:14:31.955 [main] DEBUG c.h.PingExecutorService - Scheduled execution thread pool created successfully
+11:14:31.991 [main] DEBUG c.h.PingExecutorService - Disconnected HttpUrlConnection successfully (globally disconnect all socket connections)
