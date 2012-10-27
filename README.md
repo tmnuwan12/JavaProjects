@@ -1,4 +1,3 @@
-JavaProjects
-============
+Data Structures
 
-Java Related Projects
+Data structures such like Stacks, Queues, LikedList & Map implementations in Java.
