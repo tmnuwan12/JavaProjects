@@ -5,6 +5,7 @@ package communicator.http_transmission;
 
 import java.io.IOException;
 
+
 /**
  * @author tmnuwan12
  *
@@ -21,6 +22,8 @@ public class PingExecutor {
 
 		PingExecutorService pingService = new PingExecutorService(5);
 		pingService.fireRequests();
+	
+		
 	
 
 	}

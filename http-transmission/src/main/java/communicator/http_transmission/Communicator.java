@@ -19,24 +19,26 @@ import org.slf4j.LoggerFactory;
 /**
  * @author tmnuwan12
  * 
- *         This class is responsible for creating singleton HttpURLConnection
- *         which will be shared between threads to make connection to a remote
- *         server. This class is thread safe.
+ *         This class is responsible for creating HttpURLConnection which will
+ *         be shared between threads to make connection to a remote server. This
+ *         class is thread safe.
  * 
  */
 public class Communicator implements Runnable {
 
 	final static Logger logger = LoggerFactory.getLogger(Communicator.class);
 
-
 	private static URL url;
 	private static int TIMEOUT = 15000;
 	private static boolean isUseCache = false;
 
-
-
-	public void sendPingRequest(final File log)
-			throws IOException {
+	/**
+	 * Send ping requests.
+	 * 
+	 * @param log
+	 * @throws IOException
+	 */
+	public void sendPingRequest(final File log) throws IOException {
 		int responseCode = -1;
 		String responseMessage = "";
 		InputStream htmlPage = null;
@@ -45,10 +47,10 @@ public class Communicator implements Runnable {
 		HttpURLConnection httpUrlConnection = null;
 
 		try {
-			
+
 			url = new URL("http://www.google.com");
 			logger.debug("Initialised Communicator url:" + url);
-			
+
 			httpUrlConnection = (HttpURLConnection) url.openConnection();
 			httpUrlConnection.setReadTimeout(TIMEOUT);
 			httpUrlConnection.setConnectTimeout(TIMEOUT);
@@ -85,8 +87,7 @@ public class Communicator implements Runnable {
 									// read the values in the memory and return
 									// incorrect behaviour
 			}
-			if(httpUrlConnection != null)
-			{
+			if (httpUrlConnection != null) {
 				httpUrlConnection.disconnect();
 			}
 			if (responseMessage.isEmpty()) {
@@ -100,6 +101,12 @@ public class Communicator implements Runnable {
 		}
 	}
 
+	/**
+	 * Writer Content of StringBuffer to a log file
+	 * 
+	 * @param file
+	 * @param stringBuffer
+	 */
 	public static synchronized void writeToLogFile(final File file,
 			final StringBuffer stringBuffer) {
 
@@ -124,6 +131,12 @@ public class Communicator implements Runnable {
 		}
 	}
 
+	/**
+	 * Create daily rolling log file.
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
 	public static synchronized File createLogFile() throws IOException {
 		String dailyTruncatedFileName = getCurrentDate();
 
@@ -163,7 +176,8 @@ public class Communicator implements Runnable {
 			}
 		} catch (IOException e) {
 
-			logger.error("Something wrong with writing headers to log" + "\n", e);
+			logger.error("Something wrong with writing headers to log" + "\n",
+					e);
 		} finally {
 			writer.close();
 		}
