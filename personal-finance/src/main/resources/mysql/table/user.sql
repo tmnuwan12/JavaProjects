@@ -1,0 +1,8 @@
+CREATE TABLE `user` (
+  `User_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `IsAdmin` bit(1) NOT NULL,
+  `EndDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`User_ID`),
+  UNIQUE KEY `User_ID_UNIQUE` (`User_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1$$
+
