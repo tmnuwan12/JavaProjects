@@ -1,0 +1,18 @@
+22 Nov 2012 ;08:30:18.624 [http-8080-1] INFO  com.org.tradecard.rest.RestController
+                - Restful GET Request Received
+22 Nov 2012 ;08:30:33.207 [http-8080-1] INFO  com.org.tradecard.rest.RestController
+                - Received post request RequestStub [requestId=1, message=Test Message, status=OK]
+22 Nov 2012 ;08:31:39.075 [http-8080-1] INFO  com.org.tradecard.rest.RestController
+                - Received post request RequestStub [requestId=1, message=Test Message, status=OK]
+22 Nov 2012 ;08:32:47.612 [http-8080-1] INFO  com.org.tradecard.rest.RestController
+                - Received post request RequestStub [requestId=1, message=Test Message, status=OK]
+22 Nov 2012 ;08:41:56.353 [http-8080-1] INFO  com.org.tradecard.rest.RestController
+                - Received post request RequestStub [requestId=1, message=Test Message, status=OK]
+22 Nov 2012 ;08:55:20.298 [http-8080-1] INFO  com.org.tradecard.rest.RestController
+                - Received post request RequestStub [requestId=1, message=Test Message, status=OK]
+22 Nov 2012 ;10:06:19.957 [http-8080-1] INFO  com.org.tradecard.rest.RestController
+                - Received post request RequestStub [requestId=1, message=Test Message, status=OK]
+22 Nov 2012 ;10:21:00.539 [http-8080-1] INFO  com.org.tradecard.rest.RestController
+                - Received post request RequestStub [requestId=0, message=Hello, status=OK]
+22 Nov 2012 ;10:21:48.369 [http-8080-1] INFO  com.org.tradecard.rest.RestController
+                - Received post request RequestStub [requestId=0, message=Hello, status=OK]

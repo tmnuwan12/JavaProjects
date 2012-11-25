@@ -1,0 +1,278 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>restful-ws</groupId>
+	<artifactId>tradecard-rest-webapp</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>tradecard-rest-webapp Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.1.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>3.1.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.1.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.ws</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>1.5.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>3.1.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>3.1.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.ws</groupId>
+			<artifactId>spring-oxm-tiger</artifactId>
+			<version>1.5.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.castor</groupId>
+			<artifactId>castor-xml</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>1.9.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.9</version>
+		</dependency>
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.15</version>
+		</dependency>
+
+
+		<!-- Self4J related dependancies -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.0.6</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>1.0.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>3.1.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+		</dependency>
+		<!-- Dependancy for JSON Parser testing -->
+		
+		<!-- For json-lib artifact make sure classifer is there otherwise it will not work-->
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			 <classifier>jdk15</classifier>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.8.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.ezmorph</groupId>
+			<artifactId>ezmorph</artifactId>
+			<version>1.0.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>tradecard-rest-webapp</finalName>
+
+		<!-- Require m2e maven-resource connectors -->
+		<!-- <plugins> <plugin> <artifactId>maven-resources-plugin</artifactId> 
+			<version>2.6</version> <executions> <execution> <id>copy-resource</id> <phase>process-resource</phase> 
+			<goals> <goal>copy-resource</goal> </goals> <configuration> <outputDirectory>${basedir}/src/main/webapp/WEB-INF/</outputDirectory> 
+			<resources> <resource> <directory>src/main/resources</directory> <filtering>true</filtering> 
+			</resource> </resources> </configuration> </execution> </executions> </plugin> 
+			</plugins> -->
+
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>schemagen</id>
+						<!-- <phase>verify</phase> -->
+						<phase>test</phase>
+						<goals>
+							<goal>schemagen</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<transformSchemas>
+						<transformSchema>
+							<uri>http://www.tradecard/rest/request</uri>
+							<toPrefix>request</toPrefix>
+							<toFile>request_schema.xsd</toFile>
+						</transformSchema>
+						<transformSchema>
+							<uri>http://www.tradecard/rest/response</uri>
+							<toPrefix>response</toPrefix>
+							<toFile>response_schema.xsd</toFile>
+						</transformSchema>
+					</transformSchemas>
+					<includes>
+						<include>**/domain/*.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+			<!-- <plugin> <groupId>org.apache.tomcat.maven</groupId> <artifactId>tomcat7-maven-plugin</artifactId> 
+				<version>2.0</version> <executions> <execution> <id>start-tomcat</id> <phase>install</phase> 
+				<goals> <goal>deploy</goal> </goals> </execution> <execution> <id>stop-tomcat</id> 
+				<phase>clean</phase> <goals> <goal>stop</goal> </goals> </execution> </executions> 
+				<configuration> <path>/</path> <url>http://localhost:8080/manager</url> <tomcatUsers>src/main/tomcatconf/tomcat-users.xml</tomcatUsers> 
+				<serverXml>src/main/tomcatconf/server.xml</serverXml> <server>my-tomcat</server> 
+				<username>both</username> <password>tomcat</password> </configuration> <dependencies> 
+				<dependency> <groupId>org.apache.derby</groupId> <artifactId>derby</artifactId> 
+				<version>10.9.1.0</version> </dependency> <dependency> <groupId>javax.mail</groupId> 
+				<artifactId>mail</artifactId> <version>1.4</version> </dependency> </dependencies> 
+				</plugin> -->
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<configuration>
+					<url>http://localhost:8080/manager</url>
+					<server>my-tomcat</server>
+					<path>/mywebapp</path>
+					<mode>both</mode>
+				</configuration>
+				<executions>
+					<execution>
+						<id>start-tomcat</id>
+						<!-- <phase>install</phase> -->
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<!-- By default, the Surefire plugin executes **/Test*.java, **/*Test.java, 
+				and **/*TestCase.java test classes. The Failsafe plugin will look for **/IT*.java, 
+				**/*IT.java, and **/*ITCase.java -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>failsafe-maven-plugin</artifactId>
+				<version>2.4.3-alpha-1</version>
+				<executions>
+					<execution>
+						<id>failsafe-it-test</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>integration-test</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>failsafe-verify</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<includes>
+						<include>**/IT*.java</include>
+						<include>**/*IT.java</include>
+						<include>**/*ITCase.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> 
+				<version>2.12.4</version> <configuration> <skipTests>false</skipTests> </configuration> 
+				</plugin> -->
+
+		</plugins>
+
+
+	</build>
+</project>
